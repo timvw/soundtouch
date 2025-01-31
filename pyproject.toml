@@ -3,6 +3,10 @@ name = "bose_soundtouch"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    { name = "Tim Van Wassenhove", email = "tim@timvw.be" }
+]
 requires-python = ">=3.12"
 dependencies = [
     "httpx",
