@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bose SoundTouch Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="setup-section">
+            <h2>Device Setup</h2>
+            <input type="text" id="hostname" placeholder="Device IP" value="Bose-Woonkamer.local">
+            <button onclick="configureDevice()">Configure</button>
+            <div id="connectionStatus" class="status-indicator"></div>
+        </div>
+
+        <div class="remote">
+            <div class="now-playing">
+                <div class="now-playing-art">
+                    <img id="containerArt" alt="Album Art">
+                </div>
+                <div class="now-playing-info">
+                    <div id="trackName" class="track-name"></div>
+                    <div id="artistName" class="artist-name"></div>
+                    <div id="sourceName" class="source-name"></div>
+                </div>
+            </div>
+
+            <div class="remote-top">
+                <button class="power-btn" onclick="togglePower()">
+                    <span class="icon">⏻</span>
+                </button>
+                <button class="aux-btn" disabled>
+                    <span class="icon">AUX</span>
+                </button>
+            </div>
+            
+            <div class="presets">
+                <button onclick="setPreset(1)">1</button>
+                <button onclick="setPreset(2)">2</button>
+                <button onclick="setPreset(3)">3</button>
+                <button onclick="setPreset(4)">4</button>
+                <button onclick="setPreset(5)">5</button>
+                <button onclick="setPreset(6)">6</button>
+            </div>
+
+            <div class="volume-controls">
+                <span class="volume-label">−</span>
+                <input type="range" 
+                       id="volume" 
+                       min="0" 
+                       max="100" 
+                       value="0" 
+                       oninput="setVolume(this.value)">
+                <span class="volume-label">+</span>
+                <span class="volume-value" id="volumeLabel">0</span>
+            </div>
+
+            <div class="playback-controls">
+                <button onclick="playAudio()">⏯</button>
+            </div>
+
+            <div class="track-controls">
+                <button onclick="prevTrack()">⏮</button>
+                <button onclick="nextTrack()">⏭</button>
+            </div>
+
+            <div class="feedback-controls">
+                <button onclick="thumbsDown()">👎</button>
+                <button onclick="thumbsUp()">👍</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,20 @@
+[project]
+name = "bose_soundtouch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx",
+    "xmltodict",
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+]
+
+[dependency-groups]
+dev = [
+    "fastapi[standard]>=0.115.8",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.3",
+]
